@@ -4,12 +4,11 @@ import java.util.Calendar;
 import java.util.UUID;
 
 public class Sessao extends Filme{
-    private static UUID id;
+    private UUID id;
     private Calendar horario;
     private Integer numeroSala;
 
     public Sessao() {
-        id = UUID.randomUUID();
     }
 
     public Sessao(Integer numeroSala, Calendar horario, Filme filme) {
@@ -20,7 +19,6 @@ public class Sessao extends Filme{
     }
 
     public Sessao(Filme filme) {
-        id = UUID.randomUUID();
         setFilme(filme);
     }
     public UUID getId() {

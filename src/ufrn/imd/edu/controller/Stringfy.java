@@ -11,7 +11,7 @@ public class Stringfy {
     static SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm");
     public final String sessoesEmCadaSala(Cinema cinema){
         //Variaveis auxiliares
-        Sessao s;   String str = "";     UUID id;
+        Sessao s;   String str = "", horario;     UUID id;
         HashMap<Integer, ArrayList<UUID>> sessoesPorSala = cinema.getSessaoEmSala();
         ArrayList<Integer> listaNumSalas = cinema.getListaNumSalas();
 
@@ -22,9 +22,11 @@ public class Stringfy {
                 //Acessar UUID dentro do ArrayList
                 id = sessoesPorSala.get(i).get(j);
                 s = cinema.getSessaoPorId(id);
+                horario = sdf.format(s.getHorario().getTime());
 
-                str +=  "\t Nome do Filme: " + s.getNome() + "\n" +
-                        "\t Horário: " + sdf.format(s.getHorario().getTime()) + "\n" +
+                str +=  "\t ID: " + s.getId() + "\n" +
+                        "\t Nome do Filme: " + s.getNome() + "\n" +
+                        "\t Horário: " + horario + "\n" +
                         "\t Número da Sala: " + s.getNumeroSala() + "\n"+
                         "\t Descrição: " + s.getDescricao() + "\n\n";
             }
