@@ -6,24 +6,12 @@ public class Cinema {
 	
     private double faturamentoInteiras, faturamentoInteiras3D, faturamentoMeias, faturamentoMeias3D;
     private int ingressosInteiras, ingressosInteiras3D, ingressosMeias, ingressosMeias3D; 
-    private ArrayList<Sala> salas;
-    private ArrayList<Filme> filmes;
-    private ArrayList<Sessao> sessoes;
+    private ArrayList<Sala> salas= new ArrayList<Sala>();
+    private ArrayList<Filme> filmes= new ArrayList<Filme>();
+    private ArrayList<Sessao> sessoes= new ArrayList<Sessao>();
     
     
-	public Cinema(){
-        faturamentoInteiras = 0;
-        faturamentoInteiras3D = 0;
-        faturamentoMeias = 0;
-        faturamentoMeias3D = 0;
-        ingressosInteiras = 0;
-        ingressosInteiras3D = 0;
-        ingressosMeias = 0;
-        ingressosMeias3D =  0;
-        salas = new ArrayList<Sala>();
-        filmes = new ArrayList<Filme>();
-        sessoes = new ArrayList<Sessao>();
-    }
+	public Cinema(){}
 	
 	public void fechar(){
 		faturamentoInteiras = 0;
@@ -119,7 +107,69 @@ public class Cinema {
         sessoes.remove(sessao);
     }
     
-	
+	public boolean venderIngresso(Sessao sessao, char tipoIngresso, int poltrona){               
+
+        if(sessao.ocuparPoltrona(poltrona, tipoIngresso)) { //Poltrona ocupada com sucesso.
+
+            if(sessao.isExibicao3D()) { //A sessão é 3D.
+
+                if(tipoIngresso == 'i') {
+                    ingressosInteiras3D++;
+                    faturamentoInteiras3D += sessao.getValorIngresso();
+                } else {
+                    ingressosMeias3D++;
+                    faturamentoMeias3D += sessao.getValorIngresso() / 2;
+                }
+
+            } else {                       
+
+                if(tipoIngresso == 'i') {
+                    ingressosInteiras++;
+                    faturamentoInteiras += sessao.getValorIngresso();
+                } else {
+                    ingressosMeias++;
+                    faturamentoMeias += sessao.getValorIngresso() / 2;
+                }
+            }
+
+        } else {
+            return false;
+        }
+        
+        return true;
+    }
+
+    public boolean cancelarVenda(Sessao sessao, int poltrona){
+        char tipoIngresso = sessao.getPoltronas()[poltrona]; //Salva o tipo de ingresso que será sobrescrito.
+
+        if(sessao.liberarPoltrona(poltrona)) { //Poltrona liberada com sucesso.
+
+            if(sessao.isExibicao3D()) {    //A sessão é 3D.    
+
+                if(tipoIngresso == 'i') {
+                    ingressosInteiras3D--;
+                    faturamentoInteiras3D -= sessao.getValorIngresso();
+                } else {
+                    ingressosMeias3D--;
+                    faturamentoMeias3D -= sessao.getValorIngresso() / 2;
+                }
+
+            } else {
+                if(tipoIngresso == 'i') {
+                    ingressosInteiras--;
+                    faturamentoInteiras -= sessao.getValorIngresso();
+                } else {
+                    ingressosMeias--;
+                    faturamentoMeias -= sessao.getValorIngresso() / 2;
+                }
+            }
+
+        } else {
+            return false;
+        }
+
+        return true;
+    }
     
 
    }

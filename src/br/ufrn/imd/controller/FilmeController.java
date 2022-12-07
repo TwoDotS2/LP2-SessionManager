@@ -9,13 +9,14 @@ import br.ufrn.imd.model.Filme;
 import br.ufrn.imd.model.Sessao;
 
 public class FilmeController {
-	 private static Scanner scanner = new Scanner(System.in);
-	 private static Cinema cinema = new Cinema();
-	 private static CinemaUtil util = new CinemaUtil();
-	 private static String temp="";
-	 private static boolean loop = false;
-	 private static int opcaoInt=0;
-	 private static int ponteiro=-1;
+	
+	 private Scanner scanner = new Scanner(System.in);
+	 private Cinema cinema = new Cinema();
+	 private CinemaUtil util = new CinemaUtil();
+	 private String temp="";
+	 private boolean loop = false;
+	 private int opcaoInt=0;
+	 private int ponteiro=-1;
 	
 	public void criarFilme() {
 		
@@ -275,7 +276,7 @@ public class FilmeController {
 
     }
 	
-	public static void removerFilme() {
+	public void removerFilme() {
 
         System.out.print("\nQual filme deseja remover? ");
         opcaoInt = util.leitor(1, cinema.getFilmes().size(), 'i');
@@ -311,6 +312,5 @@ public class FilmeController {
             cinema.removerFilme(filme);
         }
     }
-    /*MÉTODOS DE GERENCIAMENTO*/
 
 }

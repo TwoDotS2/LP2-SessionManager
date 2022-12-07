@@ -8,14 +8,14 @@ import br.ufrn.imd.model.Sessao;
 
 public class SalaController {
 	
-	 private static Cinema cinema = new Cinema();
-	 private static CinemaUtil util = new CinemaUtil();
-	 private static boolean loop = false;
-	 private static int opcaoInt=0;
-	 private static int ponteiro=-1;
+	 private Cinema cinema = new Cinema();
+	 private CinemaUtil util = new CinemaUtil();
+	 private boolean loop = false;
+	 private int opcaoInt=0;
+	 private int ponteiro=-1;
 	 
 	public void criarSalas() {
-
+		
         System.out.print("\nDigite o número da sala: ");
         int numSala = 0;
         do{
@@ -143,7 +143,7 @@ public class SalaController {
 	        }
 	    }
 	 
-	 public static void removerSala() {
+	 public void removerSala() {
 
 	        System.out.print("\nDigite a opção correspondente à sala que deseja remover: ");
 	        opcaoInt = util.leitor(1, cinema.getSalas().size(), 'i');
@@ -178,4 +178,6 @@ public class SalaController {
 	            cinema.removerSala(sala);
 	        }
 	    }
+	 
+	 
 }

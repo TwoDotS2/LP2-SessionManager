@@ -12,19 +12,19 @@ import br.ufrn.imd.model.Sessao;
 
 public class SessaoController {
 	
-	 private static boolean aberto = false;
-	 private static Cinema cinema = new Cinema();
-	 private static CinemaUtil util = new CinemaUtil();
-	 private static FilmeController fc = new FilmeController();
-	 private static SalaController sc = new SalaController();
-	 private static boolean loop = false;
-	 private static int opcaoInt=0;
-	 private static double opcaoDouble=0.0;
-	 private static DecimalFormat df = new DecimalFormat("0.00");
-	 private static DateTimeFormatter formataHora = DateTimeFormatter.ofPattern("HH:mm");
+	 private boolean aberto = false;
+	 private Cinema cinema = new Cinema();
+	 private CinemaUtil util = new CinemaUtil();
+	 private FilmeController fc = new FilmeController();
+	 private SalaController sc = new SalaController();
+	 private boolean loop = false;
+	 private int opcaoInt=0;
+	 private double opcaoDouble=0.0;
+	 private DecimalFormat df = new DecimalFormat("0.00");
+	 private DateTimeFormatter formataHora = DateTimeFormatter.ofPattern("HH:mm");
 	 
 	public void criarSessao() {
-		
+
 		
 		 if(cinema.getFilmes().size() == 0) {
 	            System.out.println("\n-------------------------------------------------------------------------------");
@@ -37,7 +37,7 @@ public class SessaoController {
 	            fc.criarFilme();
 	            
 	     }
-		 if(cinema.getSalas().size() == 0) {
+		 if(cinema.getSalas().size() != 0) {
 	            System.out.println("\n-------------------------------------------------------------------------------");
 	            System.out.println("|                 -> Você está criando uma nova sessão <-                     |");
 	            System.out.println("|                                                                             |");
@@ -215,7 +215,7 @@ public class SessaoController {
 
     }
 	
-	public static void atualizarSessoes() {
+	public void atualizarSessoes() {
         LocalTime horarioAtual = LocalTime.now();
 
         for (int i = 0; i < cinema.getSessoes().size(); i++) {
