@@ -1,0 +1,11 @@
+/home/afonso/Documentos/LP2/manager.session/src/main/java/br/ufrn/imd/manager/session/entity/Filme.java
+/home/afonso/Documentos/LP2/manager.session/src/main/java/br/ufrn/imd/manager/session/controller/FilmeController.java
+/home/afonso/Documentos/LP2/manager.session/src/main/java/br/ufrn/imd/manager/session/controller/SalaController.java
+/home/afonso/Documentos/LP2/manager.session/src/main/java/br/ufrn/imd/manager/session/entity/Cinema.java
+/home/afonso/Documentos/LP2/manager.session/src/main/java/br/ufrn/imd/manager/session/repository/SalaRepository.java
+/home/afonso/Documentos/LP2/manager.session/src/main/java/br/ufrn/imd/manager/session/entity/Sessao.java
+/home/afonso/Documentos/LP2/manager.session/src/main/java/br/ufrn/imd/manager/session/Application.java
+/home/afonso/Documentos/LP2/manager.session/src/main/java/br/ufrn/imd/manager/session/controller/SessaoController.java
+/home/afonso/Documentos/LP2/manager.session/src/main/java/br/ufrn/imd/manager/session/entity/Sala.java
+/home/afonso/Documentos/LP2/manager.session/src/main/java/br/ufrn/imd/manager/session/repository/SessaoRepository.java
+/home/afonso/Documentos/LP2/manager.session/src/main/java/br/ufrn/imd/manager/session/repository/FilmeRepository.java
