@@ -10,6 +10,8 @@ import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
+import static java.util.Objects.isNull;
+
 @Service
 public class FilmeService {
 
@@ -44,5 +46,39 @@ public class FilmeService {
     public Optional<Filme> findById(Integer id){
 
         return filmeRepository.findById(id);
+    }
+
+    @Transactional
+    public Filme updateFilme(Integer id, FilmeDTO filmeDTO){
+        Filme filmeUpdate = filmeRepository.getReferenceById(id);
+
+        if (filmeUpdate == null) throw new NullPointerException();
+
+        //Verificações para checar se os valores foram informados
+
+        if(!isNull(filmeDTO.getTitulo())){
+            filmeUpdate.setTitulo(filmeDTO.getTitulo());
+        }
+
+        if(!isNull(filmeDTO.getDuracao())){
+            filmeUpdate.setDuracao(filmeDTO.getDuracao());
+        }
+
+        if (!isNull(filmeDTO.getLinkImagem())){
+            filmeUpdate.setLinkImagem(filmeDTO.getLinkImagem());
+        }
+
+        if(!isNull(filmeDTO.getTipoAudio())){
+            filmeUpdate.setTipoAudio(filmeDTO.getTipoAudio());
+        }
+
+        if ( !isNull(filmeDTO.isPermite3D())){
+            filmeUpdate.setPermite3D(filmeDTO.isPermite3D());
+        }
+
+        //Salvar
+        filmeRepository.save(filmeUpdate);
+
+        return filmeUpdate;
     }
 }
