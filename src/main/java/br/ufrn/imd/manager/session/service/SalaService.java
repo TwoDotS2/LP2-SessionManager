@@ -1,7 +1,7 @@
 package br.ufrn.imd.manager.session.service;
 
 import br.ufrn.imd.manager.session.dto.SalaDTO;
-import br.ufrn.imd.manager.session.model.Sala;
+import br.ufrn.imd.manager.session.entity.Sala;
 import br.ufrn.imd.manager.session.repository.SalaRepository;
 import org.springframework.stereotype.Service;
 

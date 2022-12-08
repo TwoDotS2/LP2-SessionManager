@@ -1,4 +1,4 @@
-package br.ufrn.imd.manager.session.model;
+package br.ufrn.imd.manager.session.entity;
 
 import br.ufrn.imd.manager.session.dto.FilmeDTO;
 import lombok.AllArgsConstructor;

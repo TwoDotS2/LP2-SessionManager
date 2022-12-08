@@ -1,7 +1,7 @@
 package br.ufrn.imd.manager.session.controller;
 
 import br.ufrn.imd.manager.session.dto.SalaDTO;
-import br.ufrn.imd.manager.session.model.Sala;
+import br.ufrn.imd.manager.session.entity.Sala;
 import br.ufrn.imd.manager.session.service.SalaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

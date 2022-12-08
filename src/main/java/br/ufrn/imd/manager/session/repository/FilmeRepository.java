@@ -1,7 +1,7 @@
 package br.ufrn.imd.manager.session.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import br.ufrn.imd.manager.session.model.*;
+import br.ufrn.imd.manager.session.entity.*;
 import org.springframework.stereotype.Repository;
 
 @Repository

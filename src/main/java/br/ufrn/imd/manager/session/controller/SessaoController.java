@@ -1,7 +1,7 @@
 package br.ufrn.imd.manager.session.controller;
 
 import br.ufrn.imd.manager.session.dto.SessaoDTO;
-import br.ufrn.imd.manager.session.model.Sessao;
+import br.ufrn.imd.manager.session.entity.Sessao;
 import br.ufrn.imd.manager.session.service.SessaoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

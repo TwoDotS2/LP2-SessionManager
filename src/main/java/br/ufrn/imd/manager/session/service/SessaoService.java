@@ -3,9 +3,9 @@ package br.ufrn.imd.manager.session.service;
 import br.ufrn.imd.manager.session.dto.FilmeDTO;
 import br.ufrn.imd.manager.session.dto.SalaDTO;
 import br.ufrn.imd.manager.session.dto.SessaoDTO;
-import br.ufrn.imd.manager.session.model.Filme;
-import br.ufrn.imd.manager.session.model.Sala;
-import br.ufrn.imd.manager.session.model.Sessao;
+import br.ufrn.imd.manager.session.entity.Filme;
+import br.ufrn.imd.manager.session.entity.Sala;
+import br.ufrn.imd.manager.session.entity.Sessao;
 import br.ufrn.imd.manager.session.repository.SessaoRepository;
 import org.springframework.stereotype.Service;
 

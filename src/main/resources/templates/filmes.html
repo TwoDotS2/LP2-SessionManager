@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Student Management System</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <!-- Brand -->
+    <a class="navbar-brand" href="#">Gestor de Sessões de Cinema</a>
+</nav>
+
+<div class ="container">
+    <div class = "row">
+        <h1> Lista dos Filmes </h1>
+    </div>
+
+    <div  th:each = "filme: ${filmes}" class="d-flex position-relative" margin="15">
+        <img th:src="${filme.linkImagem}" class="flex-shrink-0 me-3" width="250" height="300">
+        <div>
+            <h5 class="mt-0" th:text="${filme.titulo}"></h5>
+            <p class="text-md-start" th:text="'Tipo da produção: ' + ${filme.tipoProducao}"></p>
+            <p class="text-md-start" th:text="'Duração: ' + ${filme.duracao} + ' minutos'"></p>
+            <p class="text-md-start" th:text="'Exibição em 3D: ' + ${filme.permite3D? 'Sim':'Não'}"></p>
+        </div>
+    </div>
+
+
+</div>
+</body>
+</html>

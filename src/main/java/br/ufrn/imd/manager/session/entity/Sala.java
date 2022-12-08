@@ -1,4 +1,4 @@
-package br.ufrn.imd.manager.session.model;
+package br.ufrn.imd.manager.session.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
