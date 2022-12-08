@@ -1,0 +1,246 @@
+{
+	"info": {
+		"_postman_id": "6b2797d2-1da3-44a7-8fcd-2ac8bdd009b8",
+		"name": "SessionManager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24802090"
+	},
+	"item": [
+		{
+			"name": "Filmes",
+			"item": [
+				{
+					"name": "Listar Todos os Filmes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/filmes/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"filmes",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Filme por Título",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/filmes/filme/:title",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"filmes",
+								"filme",
+								":title"
+							],
+							"variable": [
+								{
+									"key": "title",
+									"value": "Pantera Negra: Wakanda Para Sempre"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Filme por Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/filmes/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"filmes",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registrar Novo Filme",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"titulo\": \"Noite Infeliz\",\n    \"tipoProducao\":  \"Longa Metragem\",\n\t\"duracao\": \"112\", \n\t\"tipoAudio\": [\"Original\", \"Dublado\"],\n\t\"permite3D\": true,\n    \"linkImagem\": \"https://www.claquete.com.br/fotos/filmes/poster/14585_medio.jpg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/filmes/registrar",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"filmes",
+								"registrar"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Avatar: A Forma da Água",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"titulo\": \"Avatar: O Caminho da Água\",\n    \"tipoProducao\":  \"Longa Metragem\",\n\t\"duracao\": \"240\", \n\t\"tipoAudio\": [\"Original\", \"Dublado\"],\n\t\"permite3D\": true,\n    \"linkImagem\": \"https://www.claquete.com.br/fotos/filmes/poster/11971_medio.jpg\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/filmes/registrar",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"filmes",
+										"registrar"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Pantera Negra: Wakanda Para Sempre",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"titulo\": \"Pantera Negra: Wakanda Para Sempre\",\n    \"tipoProducao\":  \"Longa Metragem\",\n\t\"duracao\": \"161\", \n\t\"tipoAudio\": [\"Original\", \"Legendado\"],\n\t\"permite3D\": false,\n    \"linkImagem\": \"https://www.claquete.com.br/fotos/filmes/poster/12861_medio.jpg\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/filmes/registrar",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"filmes",
+										"registrar"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Gato de Botas 2: O Último Pedido",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"titulo\": \"Gato de Botas 2: O Último Pedido\",\n    \"tipoProducao\":  \"Animação\",\n\t\"duracao\": \"120\", \n\t\"tipoAudio\": [\"Original\", \"Dublado\", \"Legendado\"],\n\t\"permite3D\": false,\n    \"linkImagem\": \"https://www.claquete.com.br/fotos/filmes/poster/14583_medio.jpg\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/filmes/registrar",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"filmes",
+										"registrar"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Noite Infeliz",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"titulo\": \"Noite Infeliz\",\n    \"tipoProducao\":  \"Longa Metragem\",\n\t\"duracao\": \"112\", \n\t\"tipoAudio\": [\"Original\", \"Dublado\"],\n\t\"permite3D\": true,\n    \"linkImagem\": \"https://www.claquete.com.br/fotos/filmes/poster/14585_medio.jpg\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/filmes/registrar",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"filmes",
+										"registrar"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Sessões",
+			"item": []
+		},
+		{
+			"name": "Salas",
+			"item": []
+		}
+	]
+}
