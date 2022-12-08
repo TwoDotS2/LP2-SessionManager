@@ -5,6 +5,7 @@ import br.ufrn.imd.manager.session.repositories.SessaoRepository;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 
 public class SessaoService {
     final SessaoRepository sessaoRepository;
@@ -42,7 +43,7 @@ public class SessaoService {
      * @param id
      * @return sessao pelo id
      */
-    public Sessao findById(Integer id){
+    public Optional<Sessao> findById(Integer id){
         return sessaoRepository.findById(id);
     }
 }

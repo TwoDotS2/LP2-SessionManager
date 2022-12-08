@@ -12,7 +12,7 @@ import java.rmi.ServerException;
 import java.util.List;
 
 @RestController
-@RequestMapping("/filmes/")
+@RequestMapping("/filmes")
 public class FilmeController {
 
     @Autowired
@@ -27,5 +27,15 @@ public class FilmeController {
     @PostMapping("/registrar")
     public ResponseEntity<Filme> addFilme(@RequestBody FilmeDTO filmeDTO){
             return new ResponseEntity<>(filmeService.save(filmeDTO), HttpStatus.CREATED);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Object> findFilmeById(@PathVariable Integer id){
+        return new ResponseEntity<>(filmeService.findById(id), HttpStatus.OK);
+    }
+
+    @GetMapping("/filme/{title}")
+    public ResponseEntity<Object> findFilmeByTitulo(@PathVariable String title){
+        return new ResponseEntity<>(filmeService.findByTitulo(title), HttpStatus.OK);
     }
 }

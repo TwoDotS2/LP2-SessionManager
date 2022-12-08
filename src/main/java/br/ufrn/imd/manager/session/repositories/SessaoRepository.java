@@ -8,6 +8,5 @@ import org.springframework.stereotype.Repository;
 import java.util.UUID;
 
 @Repository
-public interface SessaoRepository extends JpaRepository<Sessao, UUID> {
-    Sessao findById(Integer id);
+public interface SessaoRepository extends JpaRepository<Sessao, Integer> {
 }

@@ -21,7 +21,7 @@
             <property name="hibernate.format_sql" value="true" /> <!-- Show SQL formatted -->
 
             <property name="eclipselink.logging.level" value="SEVERE"/>
-            <property name="eclipselink.ddl-generation" value="create-drop"/>
+            <property name="eclipselink.ddl-generation" value="update"/>
 
         </properties>
     </persistence-unit>

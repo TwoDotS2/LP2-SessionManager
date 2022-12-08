@@ -9,6 +9,7 @@ import br.ufrn.imd.manager.session.repositories.SalaRepository;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 
 public class SalaService {
     final SalaRepository salaRepository;
@@ -44,7 +45,7 @@ public class SalaService {
      * @param id
      * @return sala pelo id
      */
-    public Sala findById(Integer id){
+    public Optional<Sala> findById(Integer id){
         return salaRepository.findById(id);
     }
 }

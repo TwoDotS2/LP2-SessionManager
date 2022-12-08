@@ -22,6 +22,8 @@ public class Filme {
 	private String titulo, tipoProducao;
 	private int duracao;
 
+	private String linkImagem;
+
 	@ElementCollection(fetch = FetchType.EAGER)
 	@CollectionTable(name = "tipos_de_audio")
 	private List<String> tipoAudio = new ArrayList<String>();

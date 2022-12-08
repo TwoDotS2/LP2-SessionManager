@@ -4,9 +4,11 @@ import br.ufrn.imd.manager.session.dtos.FilmeDTO;
 import br.ufrn.imd.manager.session.models.Filme;
 import br.ufrn.imd.manager.session.repositories.FilmeRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class FilmeService {
@@ -22,7 +24,7 @@ public class FilmeService {
     public Filme save(FilmeDTO filmeDTO){
 
         Filme filme = Filme.build(filmeDTO.getId(), filmeDTO.getTitulo(), filmeDTO.getTipoProducao(),
-                filmeDTO.getDuracao(), filmeDTO.getTipoAudio(), filmeDTO.isPermite3D());
+                filmeDTO.getDuracao(), filmeDTO.getLinkImagem(), filmeDTO.getTipoAudio(), filmeDTO.isPermite3D());
 
        return filmeRepository.save(filme);
     }
@@ -35,6 +37,12 @@ public class FilmeService {
     }
 
     public Filme findByTitulo(String titulo){
+
         return filmeRepository.findByTitulo(titulo);
+    }
+
+    public Optional<Filme> findById(Integer id){
+
+        return filmeRepository.findById(id);
     }
 }

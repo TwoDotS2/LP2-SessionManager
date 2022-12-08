@@ -14,6 +14,7 @@ public class FilmeDTO {
 	private String tipoProducao;
 	private int duracao;
 
+	private String linkImagem;
 	private List<String> tipoAudio = new ArrayList<String>();
 	private boolean permite3D;
 	
