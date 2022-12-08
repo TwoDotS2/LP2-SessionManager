@@ -1,10 +1,9 @@
-package br.ufrn.imd.manager.session.services;
+package br.ufrn.imd.manager.session.service;
 
-import br.ufrn.imd.manager.session.dtos.FilmeDTO;
-import br.ufrn.imd.manager.session.models.Filme;
-import br.ufrn.imd.manager.session.repositories.FilmeRepository;
+import br.ufrn.imd.manager.session.dto.FilmeDTO;
+import br.ufrn.imd.manager.session.model.Filme;
+import br.ufrn.imd.manager.session.repository.FilmeRepository;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.transaction.Transactional;
 import java.util.List;

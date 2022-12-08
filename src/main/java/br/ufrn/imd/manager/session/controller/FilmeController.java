@@ -1,14 +1,13 @@
-package br.ufrn.imd.manager.session.controllers;
+package br.ufrn.imd.manager.session.controller;
 
-import br.ufrn.imd.manager.session.dtos.FilmeDTO;
-import br.ufrn.imd.manager.session.models.Filme;
-import br.ufrn.imd.manager.session.services.FilmeService;
+import br.ufrn.imd.manager.session.dto.FilmeDTO;
+import br.ufrn.imd.manager.session.model.Filme;
+import br.ufrn.imd.manager.session.service.FilmeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.rmi.ServerException;
 import java.util.List;
 
 @RestController
@@ -42,6 +41,7 @@ public class FilmeController {
         return new ResponseEntity<>(filmeService.findByTitulo(title), HttpStatus.OK);
     }
 
+    // FIXME: 08/12/2022 - Exception na chamada
     @PutMapping("/filme/{id}")
     public ResponseEntity<Filme> updateFilme(@PathVariable Integer id,@RequestBody FilmeDTO filmeDTO){
 

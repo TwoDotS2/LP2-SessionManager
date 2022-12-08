@@ -1,17 +1,16 @@
-package br.ufrn.imd.manager.session.dtos;
+package br.ufrn.imd.manager.session.dto;
 
 import lombok.Data;
 
 import java.time.LocalTime;
 import java.util.Arrays;
-import java.util.UUID;
 
 @Data
 public class SessaoDTO {
 
     private Integer id;
-	private FilmeDTO filme;
-    private SalaDTO sala;
+	private FilmeDTO filmeDTO;
+    private SalaDTO salaDTO;
     private LocalTime horarioInicial;
     private LocalTime horarioFinal;
     private double valorIngresso;
@@ -20,8 +19,8 @@ public class SessaoDTO {
     private String tipoAudio;
     
 	public SessaoDTO(FilmeDTO filme, SalaDTO sala, LocalTime horarioInicial, LocalTime horarioFinal, double valorIngresso, boolean exibicao3d, String tipoAudio) {
-		this.filme = filme;
-		this.sala = sala;
+		this.filmeDTO = filme;
+		this.salaDTO = sala;
 		this.horarioInicial = horarioInicial;
 		this.horarioFinal = horarioFinal;
 		this.valorIngresso = valorIngresso;
@@ -65,7 +64,7 @@ public class SessaoDTO {
             }         
         }
 
-        return ocupados / sala.getCapacidade();
+        return ocupados / salaDTO.getCapacidade();
     }
     
     public String poltronasLivres(){
@@ -121,7 +120,7 @@ public class SessaoDTO {
     
 	@Override
 	public String toString() {
-		return "Sessao [filme=" + filme + ", horarioInicial=" + horarioInicial + ", horarioFinal=" + horarioFinal
+		return "Sessao [filme=" + filmeDTO.getTitulo() + ", horarioInicial=" + horarioInicial + ", horarioFinal=" + horarioFinal
 				+ ", valorIngresso=" + valorIngresso + ", poltronas=" + Arrays.toString(poltronas) + ", exibicao3D="
 				+ exibicao3D + ", tipoAudio=" + tipoAudio + "]";
 	}

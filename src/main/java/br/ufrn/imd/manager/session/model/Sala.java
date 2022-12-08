@@ -1,4 +1,4 @@
-package br.ufrn.imd.manager.session.models;
+package br.ufrn.imd.manager.session.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,7 +15,7 @@ public class Sala {
 	private Integer id;
 	private int numSala;
 	private int capacidade;
-	
+
 	public Sala() {}
 	public Sala(int numSala, int capacidade) {
 		this.numSala = numSala;

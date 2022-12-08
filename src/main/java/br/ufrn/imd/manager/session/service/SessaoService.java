@@ -1,12 +1,19 @@
-package br.ufrn.imd.manager.session.services;
+package br.ufrn.imd.manager.session.service;
 
-import br.ufrn.imd.manager.session.models.Sessao;
-import br.ufrn.imd.manager.session.repositories.SessaoRepository;
+import br.ufrn.imd.manager.session.dto.FilmeDTO;
+import br.ufrn.imd.manager.session.dto.SalaDTO;
+import br.ufrn.imd.manager.session.dto.SessaoDTO;
+import br.ufrn.imd.manager.session.model.Filme;
+import br.ufrn.imd.manager.session.model.Sala;
+import br.ufrn.imd.manager.session.model.Sessao;
+import br.ufrn.imd.manager.session.repository.SessaoRepository;
+import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class SessaoService {
     final SessaoRepository sessaoRepository;
 
@@ -20,9 +27,19 @@ public class SessaoService {
      * @return sala persistida
      */
     @Transactional
-    public Sessao save(Sessao sessaoDTO){
+    public Sessao save(SessaoDTO sessaoDTO){
 
-        Sessao sessao = Sessao.build(sessaoDTO.getId(), sessaoDTO.getFilme(), sessaoDTO.getSala(),
+        FilmeDTO filmeDTO = sessaoDTO.getFilmeDTO();
+        SalaDTO salaDTO = sessaoDTO.getSalaDTO();
+
+        //Criando o filme
+        Filme filme = Filme.build(filmeDTO.getId(), filmeDTO.getTitulo(), filmeDTO.getTipoProducao(),
+                filmeDTO.getDuracao(), filmeDTO.getLinkImagem(), filmeDTO.getTipoAudio(), filmeDTO.isPermite3D());
+
+        //Criando a sala
+        Sala sala = Sala.build(salaDTO.getId(), salaDTO.getNumSala(), salaDTO.getCapacidade());
+
+        Sessao sessao = Sessao.build(sessaoDTO.getId(), filme, sala,
                 sessaoDTO.getHorarioInicial(), sessaoDTO.getHorarioFinal(), sessaoDTO.getValorIngresso(),
                 sessaoDTO.getPoltronas(), sessaoDTO.isExibicao3D(), sessaoDTO.getTipoAudio());
 

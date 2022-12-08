@@ -1,16 +1,14 @@
-package br.ufrn.imd.manager.session.services;
+package br.ufrn.imd.manager.session.service;
 
-import br.ufrn.imd.manager.session.dtos.FilmeDTO;
-import br.ufrn.imd.manager.session.dtos.SalaDTO;
-import br.ufrn.imd.manager.session.models.Filme;
-import br.ufrn.imd.manager.session.models.Sala;
-import br.ufrn.imd.manager.session.repositories.FilmeRepository;
-import br.ufrn.imd.manager.session.repositories.SalaRepository;
+import br.ufrn.imd.manager.session.dto.SalaDTO;
+import br.ufrn.imd.manager.session.model.Sala;
+import br.ufrn.imd.manager.session.repository.SalaRepository;
+import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class SalaService {
     final SalaRepository salaRepository;
 

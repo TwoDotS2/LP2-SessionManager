@@ -1,4 +1,4 @@
-package br.ufrn.imd.manager.session.dtos;
+package br.ufrn.imd.manager.session.dto;
 
 import lombok.Data;
 
